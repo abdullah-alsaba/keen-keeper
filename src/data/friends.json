@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Emma Wilson",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "emma.wilson@example.com",
+    "days_since_contact": 10,
+    "status": "almost due",
+    "tags": ["work", "close friend"],
+    "bio": "Worked together at my first job. We still talk about career growth and life updates.",
+    "goal": 14,
+    "next_due_date": "2026-05-01"
+  },
+  {
+    "id": 2,
+    "name": "David Kim",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "david.kim@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["gym", "friend"],
+    "bio": "Met at the gym and became close friends over time.",
+    "goal": 7,
+    "next_due_date": "2026-04-25"
+  }
+]
