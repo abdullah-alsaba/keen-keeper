@@ -106,5 +106,17 @@
     "bio": "We plan monthly hikes and use quick voice notes during the week to stay in touch.",
     "goal": 7,
     "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 10,
+    "name": "Omar Hassan",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "omar.hassan@example.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["work", "gym"],
+    "bio": "A colleague-turned-friend who I catch up with after work and during weekend gym sessions.",
+    "goal": 14,
+    "next_due_date": "2026-05-04"
   }
 ]
