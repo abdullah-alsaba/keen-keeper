@@ -18,15 +18,15 @@ const links = [
 export default function Navbar() {
   return (
     <header className="bg-white border-b border-[#e5ebe8]">
-      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-[70px] flex items-center justify-between">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 min-h-[64px] py-2 flex items-center justify-between gap-2">
         <img src={logo} alt="KeenKeeper" className="h-8 w-auto" />
-        <nav className="flex items-center gap-1.5">
+        <nav className="flex items-center gap-1">
           {links.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `h-9 px-3.5 rounded-full flex items-center gap-1.5 text-[13px] font-semibold transition ${
+                `h-8 sm:h-9 px-2.5 sm:px-3.5 rounded-full flex items-center gap-1 sm:gap-1.5 text-xs sm:text-[13px] font-semibold transition ${
                   isActive
                     ? "bg-[#1f6a54] text-white"
                     : "text-[#385346] hover:bg-[#eaf2ee]"
@@ -35,7 +35,7 @@ export default function Navbar() {
             >
               <svg
                 viewBox="0 0 24 24"
-                className="w-[14px] h-[14px]"
+                className="w-3.5 h-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

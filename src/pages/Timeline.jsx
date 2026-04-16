@@ -18,39 +18,40 @@ export default function Timeline() {
     Text: textIcon,
     Video: videoIcon,
   };
-  const filterMap = {
-    All: "All",
-    Call: "Call",
-    Text: "Text",
-    Video: "Video",
-  };
+  const filters = ["All", "Call", "Text", "Video"];
 
   return (
-    <div className="bg-white border border-[#e3ebe7] rounded-3xl p-6">
-      <h1 className="text-3xl font-bold text-[#1f332a]">Timeline</h1>
-      <div className="mt-5 flex items-center gap-3">
-        <p className="text-sm text-[#496157] font-medium">Filter Timeline:</p>
+    <div className="max-w-[980px] mx-auto">
+      <h1 className="text-[44px] md:text-[52px] leading-tight font-bold text-[#1f2937]">Timeline</h1>
+      <div className="mt-5 w-[230px] relative">
         <select
-          className="select h-10 min-h-10 w-[170px] bg-[#eef4f1] border border-[#d4e1db] rounded-xl text-sm"
+          className="w-full h-10 pl-3.5 pr-9 rounded-lg border border-[#dfe6e2] bg-[#f8fbf9] text-[14px] text-[#5f746a] appearance-none"
           value={filter}
           onChange={(event) => setFilter(event.target.value)}
         >
-          {Object.entries(filterMap).map(([value, label]) => (
-            <option key={value} value={value}>
-              {label}
+          {filters.map((item) => (
+            <option key={item} value={item}>
+              {item}
             </option>
           ))}
         </select>
+        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9aa8a2] pointer-events-none">
+          ▾
+        </span>
       </div>
       <div className="mt-6 space-y-3">
         {filteredTimeline.map((entry) => (
-          <div key={entry.id} className="border border-[#e3ebe7] rounded-2xl p-4 flex items-center gap-4">
-            <div className="w-9 h-9 rounded-full bg-[#eef4f1] flex items-center justify-center shrink-0">
-              <img src={iconMap[entry.type]} alt={entry.type} className="w-4 h-4" />
+          <div
+            key={entry.id}
+            className="bg-white border border-[#e1e8e4] rounded-lg px-4 py-3 flex items-center gap-4"
+          >
+            <div className="w-8 h-8 rounded-full bg-[#f3f7f5] flex items-center justify-center shrink-0">
+              <img src={iconMap[entry.type]} alt={entry.type} className="w-4 h-4 opacity-90" />
             </div>
             <div>
-              <p className="font-semibold text-[#1f332a] text-sm">{entry.title}</p>
-              <p className="text-xs text-[#5f746a] mt-1">{entry.date}</p>
+              <p className="font-semibold text-[#2f5245] text-[18px] leading-none">{entry.type}</p>
+              <p className="text-[15px] text-[#6f8178] mt-1">{entry.title.replace(`${entry.type} with `, `with `)}</p>
+              <p className="text-[15px] text-[#71827a] font-semibold">{entry.date}</p>
             </div>
           </div>
         ))}

@@ -1,21 +1,42 @@
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
-import logoXL from "../assets/logo-xl.png";
 
 export default function Footer() {
+  const socials = [
+    { name: "Instagram", icon: instagram },
+    { name: "Facebook", icon: facebook },
+    { name: "X", icon: twitter },
+  ];
+
   return (
-    <footer className="bg-[#1f6a54] text-white mt-10">
-      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
-        <img src={logoXL} alt="KeenKeeper" className="h-10 mx-auto" />
-        <div className="flex justify-center gap-4 mt-4">
-          <img src={facebook} alt="facebook" className="w-5 h-5" />
-          <img src={instagram} alt="instagram" className="w-5 h-5" />
-          <img src={twitter} alt="twitter" className="w-5 h-5" />
-        </div>
-        <p className="text-xs mt-4 text-[#d8ebe3]">
-          © 2026 KeenKeeper. All rights reserved.
+    <footer className="bg-[#1f5f4b] text-white mt-10">
+      <div className="w-full max-w-[1200px] mx-auto px-6 py-10 text-center">
+        <h2 className="text-[48px] md:text-[56px] leading-none font-bold tracking-tight">KeenKeeper</h2>
+        <p className="text-[#c9d9d3] text-[14px] mt-4 max-w-[760px] mx-auto">
+          Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>
+        <p className="mt-6 text-[22px] font-semibold">Social Links</p>
+        <div className="flex justify-center gap-4 mt-3">
+          {socials.map((item) => (
+            <button
+              key={item.name}
+              aria-label={item.name}
+              className="w-12 h-12 rounded-full bg-white text-[#1f5f4b] flex items-center justify-center hover:bg-[#e9f4ef] transition"
+            >
+              <img src={item.icon} alt={item.name} className="w-8 h-8 object-contain" />
+            </button>
+          ))}
+        </div>
+        <div className="mt-7 border-t border-[#2c705a]" />
+        <div className="mt-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[#9fbbb0] text-[13px]">
+          <p>© 2026 KeenKeeper. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition">Terms of Service</a>
+            <a href="#" className="hover:text-white transition">Cookies</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
